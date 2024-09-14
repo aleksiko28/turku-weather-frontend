@@ -11,7 +11,7 @@
 	Chart.defaults.font.size = 16;
 	Chart.defaults.font.family = 'Poppins';
 
-	const options = {
+	const options: any = {
 		interaction: {
 			mode: 'index',
 			intersect: false
@@ -28,7 +28,7 @@
 			},
 			A: {
 				type: 'linear',
-				position: 'bottom',
+				position: 'left',
 				grid: {
 					borderColor: '#6730BF'
 				},
@@ -41,9 +41,8 @@
 						family: 'Poppins'
 					}
 				},
-				position: 'left',
 				ticks: {
-					callback: function (value, index, ticks) {
+					callback: function (value: string, index: any, ticks: any) {
 						return value + ' °C';
 					}
 				}
