@@ -1,6 +1,4 @@
 <script lang="ts">
-	export const prerender = false;
-
 	import Chart from 'chart.js/auto';
 	import 'chartjs-adapter-date-fns';
 	import { onMount } from 'svelte';
@@ -54,7 +52,7 @@
 
 	onMount(() => {
 		const ctx = chart.getContext('2d');
-		const parsedData = data.item.entities
+		const parsedData = data.items
 			.filter((entity: any) => entity.temperature !== undefined)
 			.map((entity: any) => {
 				return {
@@ -76,7 +74,7 @@
 				datasets: [
 					{
 						label: 'Weather in Turku',
-						data: parsedData,
+						data: sortedData,
 						yAxisID: 'A',
 						borderColor: '#6730BF'
 					}
