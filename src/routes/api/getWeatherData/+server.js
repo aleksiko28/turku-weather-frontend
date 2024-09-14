@@ -3,12 +3,12 @@
 
 import { TableClient, AzureNamedKeyCredential } from '@azure/data-tables';
 
-import { AZURE_STORAGE_ACCOUNT_NAME, AZURE_STORAGE_ACCOUNT_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 async function getTableClient() {
 	const tableName = 'WeatherTurku';
-	const accountName = AZURE_STORAGE_ACCOUNT_NAME;
-	const accountKey = AZURE_STORAGE_ACCOUNT_KEY;
+	const accountName = env.AZURE_STORAGE_ACCOUNT_NAME;
+	const accountKey = env.AZURE_STORAGE_ACCOUNT_KEY;
 
 	const credential = new AzureNamedKeyCredential(accountName, accountKey);
 	const tableClient = new TableClient(
@@ -31,7 +31,7 @@ async function listEntities() {
 }
 
 export async function GET() {
-	if (!AZURE_STORAGE_ACCOUNT_KEY || !AZURE_STORAGE_ACCOUNT_NAME) {
+	if (!env.AZURE_STORAGE_ACCOUNT_KEY || !env.AZURE_STORAGE_ACCOUNT_NAME) {
 		throw new Error('Azure Storage connection string is not defined');
 	}
 
