@@ -1,4 +1,6 @@
 <script lang="ts">
+	export const prerender = false;
+
 	import Chart from 'chart.js/auto';
 	import 'chartjs-adapter-date-fns';
 	import { onMount } from 'svelte';

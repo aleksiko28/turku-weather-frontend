@@ -17,9 +17,6 @@ importers:
       chartjs-adapter-date-fns:
         specifier: ^3.0.0
         version: 3.0.0(chart.js@4.4.4)(date-fns@4.0.0-beta.1)
-      date-fns:
-        specifier: ^4.0.0-beta.1
-        version: 4.0.0-beta.1
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
