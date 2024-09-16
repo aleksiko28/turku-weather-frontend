@@ -16,6 +16,13 @@
 			mode: 'index',
 			intersect: false
 		},
+		plugins: {
+			subtitle: {
+				display: true,
+				text: 'Data fetched from the openweathermap API',
+				align: 'start'
+			}
+		},
 		scales: {
 			y: {
 				display: false
@@ -23,20 +30,23 @@
 			x: {
 				type: 'time',
 				time: {
-					unit: 'hour'
+					unit: 'hour',
+					displayFormats: {
+						hour: 'H:mm'
+					}
 				}
 			},
 			A: {
 				type: 'linear',
 				position: 'left',
 				grid: {
-					borderColor: '#6730BF'
+					borderColor: '#0054f0'
 				},
 				display: true,
 				title: {
 					display: true,
 					text: 'Temperature',
-					color: '#6730BF',
+					color: '#0054f0',
 					font: {
 						family: 'Poppins'
 					}
@@ -73,10 +83,10 @@
 			data: {
 				datasets: [
 					{
-						label: 'Weather in Turku',
+						label: 'Temperature in Turku',
 						data: sortedData,
 						yAxisID: 'A',
-						borderColor: '#6730BF'
+						borderColor: '#0054f0'
 					}
 				]
 			},
